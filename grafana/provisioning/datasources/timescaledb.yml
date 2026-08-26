@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: TimescaleDB
+    type: postgres
+    access: proxy
+    url: timescaledb:5432
+    user: postgres
+    secureJsonData:
+      password: postgres
+    database: stock_monitoring
+    jsonData:
+      sslmode: "disable"
+      postgresVersion: 1500
+      timescaledb: true
+    isDefault: true
+    editable: true
